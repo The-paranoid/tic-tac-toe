@@ -9,6 +9,25 @@ class App extends Component {
 
   }
 
+Getstatus(){
+  if(this.state.winner===null)
+  {
+    return(<div> Current Player is {this.state.player} </div>)
+  }
+  else{
+    return(<div> Winner is {this.state.winner}</div> )
+  }
+}
+reset()
+{
+  this.setState({
+    board : Array(9).fill(null),
+    player:'X',
+    winner:null
+  });
+}
+
+
 
   winnerCheck(){
     let winnerstats = [
@@ -69,13 +88,14 @@ else{
     return (
     <div id="game">
     <div id="head">
-      Tic-Tac-Toe<br/><br/>
-     
-     <br/><br/>
+     <h1> Tic-Tac-Toe </h1>
+     <h3>{this.Getstatus()} </h3>
+    <br/>
       </div>
       <div id="board">
         {Box}
       </div>
+      <button id="reset" onClick={()=>this.reset()}> Reset </button>
       </div>
     );
   }

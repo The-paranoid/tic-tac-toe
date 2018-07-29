@@ -1,7 +1,7 @@
 #board{
     display:flex;
     box-sizing:border-box;
-    width:310px;
+    width:320px;
     flex-wrap:wrap;
 
 }
@@ -9,9 +9,10 @@
     width:100px;
     height:100px;
     flex-wrap:wrap;
-    border:1px solid black;
+    border:2px solid black;
     line-height: 80px;
     text-align: center;
+    font-size:18px;
     
 }
 #game{
@@ -23,4 +24,12 @@
 }
 #head{
     padding:10px;
+}
+#reset {
+    margin-top: 5px;
+    background:transparent;
+    background-color:black;
+    color:white;
+    height:50px;
+    width:80px;
 }
