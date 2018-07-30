@@ -5,7 +5,9 @@ class App extends Component {
   state ={
     board : Array(9).fill(null),
     player:'X',
-    winner:null
+    winner:null,
+    class:"square"
+
 
   }
 
@@ -23,7 +25,8 @@ reset()
   this.setState({
     board : Array(9).fill(null),
     player:'X',
-    winner:null
+    winner:null,
+    class:"square"
   });
 }
 
@@ -60,6 +63,14 @@ if(this.state.winner===null){
     let newBoard=this.state.board;
     if(this.state.board[index]===null)
     {newBoard[index]=this.state.player;
+    if(this.state.player=='X')
+    {
+        this.state.class="square x";
+    }
+    else
+    {
+        this.state.class="square o";
+    }
 
  let newplayer = this.state.player === 'X' ? 'O' : 'X';
     this.setState({
@@ -81,7 +92,7 @@ else{
   render()
  
   {
-    const Box=this.state.board.map((box,index)=><div className="square" key={index} onClick = {()=>this.clicked(index)}>
+    const Box=this.state.board.map((box,index)=><div className={this.state.class} key={index} onClick = {()=>this.clicked(index)}>
     {box}</div>);
    
 
